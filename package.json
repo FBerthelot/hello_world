@@ -1,0 +1,21 @@
+{
+  "name": "xebia-test",
+  "version": "0.0.1",
+  "description": "Test technique pour Xebia",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha --recursive ./test",
+    "jshint": "jshint -c .jshintrc index.js src/*"
+  },
+  "author": "Florent Berthelot",
+  "license": "All rights reserved for Xebia",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5"
+  }
+}
