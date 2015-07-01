@@ -13,8 +13,8 @@ filesReader(dirName, function(err, data) {
 
     for(var j in data.tondeuses) {
         var instance = new tondeuse(data.tondeuses[j].initPos.x, data.tondeuses[j].initPos.y, data.tondeuses[j].initPos.ori, data.size);
-        for(var i in data.tondeuses[j].parcourt) {
-            instance.movePosition(data.tondeuses[j].parcourt[i]);
+        for(var i in data.tondeuses[j].parcours) {
+            instance.movePosition(data.tondeuses[j].parcours[i]);
         }
         console.log(instance);
     }

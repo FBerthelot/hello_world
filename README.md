@@ -1,7 +1,7 @@
 #Test Technique xebia
 [ ![Codeship Status for FBerthelot/hello_world](https://codeship.com/projects/bafc8d10-0216-0133-d8a4-3eeec0a057c8/status?branch=master)](https://codeship.com/projects/88812)
 
-Ce projet simule le parcourt d'une tondeuse sur une Pelouse.
+Ce projet simule l'itinéraire d'une tondeuse sur une Pelouse.
 Vous pouvez retrouver le sujet inital dans le fichier ExcerciceTechnique-MOWER2.doc
 
 ##Lancement du projet

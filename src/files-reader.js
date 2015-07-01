@@ -27,7 +27,7 @@ module.exports = function filesReader(dirName, cb) {
                         y: parseInt(lines[i][2]),
                         ori: lines[i][4]
                     },
-                    parcourt: lines[i+1]
+                    parcours: lines[i+1]
                 };
                 data.tondeuses.push(tondeuse);
             }
