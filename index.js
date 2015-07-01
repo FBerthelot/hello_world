@@ -3,7 +3,9 @@
 var tondeuse = require('./src/tondeuse-class'),
     filesReader = require('./src/files-reader');
 
-filesReader(function(err, data) {
+var dirName= __dirname + '/fixtures/';
+
+filesReader(dirName, function(err, data) {
     if(err) {
         console.error('Something goes wrong with reading files :', err);
         return;

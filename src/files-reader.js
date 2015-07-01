@@ -2,9 +2,7 @@
 
 var fs = require('fs');
 
-var dirName= __dirname + '/../fixtures/';
-
-module.exports = function filesReader(cb) {
+module.exports = function filesReader(dirName, cb) {
     fs.readdir(dirName, function(err, files) {
         if(err) {
             cb && cb(err, null);
@@ -37,7 +35,7 @@ module.exports = function filesReader(cb) {
         }
 
         for(var i in files) {
-            fs.readFile(dirName + files[i], {encoding : 'utf8', flag: 'r'}, readTondeuseFile);
+            fs.readFile(dirName + '/' + files[i], {encoding : 'utf8', flag: 'r'}, readTondeuseFile);
         }
     });
 };
