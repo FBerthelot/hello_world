@@ -1,6 +1,14 @@
 'use strict';
 
 module.exports = function tondeuse(initX, initY, initOri, sizeOfGrass) {
+    if(typeof initX !== 'number' || typeof initY !== 'number' || typeof initOri !== 'string' || typeof sizeOfGrass !== 'object') {
+        throw 'wrong arguments passed';
+    }
+    if(initX > sizeOfGrass[0] || initY > sizeOfGrass[1]) { throw 'initial position of the tondeuse excedeed the size of grass'; }
+    if(['N', 'S', 'E', 'W'].indexOf(initOri) === -1) { throw 'initial orientation is wrong'; }
+    if(sizeOfGrass.length < 2 || typeof sizeOfGrass[0] !== 'number' || typeof sizeOfGrass[1] !== 'number' || sizeOfGrass[0] < 0 || sizeOfGrass[1] < 0 ) {
+        throw 'size of grass is wrong';
+    }
 
     this.grass = sizeOfGrass;
     this.x = initX;
@@ -22,12 +30,12 @@ module.exports = function tondeuse(initX, initY, initOri, sizeOfGrass) {
                         }
                         break;
                     case 'W':
-                        if(this.x >= 0) {
+                        if(this.x > 0) {
                             this.x--;
                         }
                         break;
                     case 'S':
-                        if(this.y >= 0) {
+                        if(this.y > 0) {
                             this.y--;
                         }
                         break;
