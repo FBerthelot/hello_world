@@ -130,30 +130,6 @@ describe('Tondeuse', function() {
             tondeuseInstance.movePosition('A');
             expect(tondeuseInstance.y).to.be.eql(0);
         });
-
-        it('shouldn\'t move to SOUTH when it can\'t', function() {
-            var tondeuseInstance = new tondeuseClass(0, 0, 'S', [0, 0]);
-            tondeuseInstance.movePosition('A');
-            expect(tondeuseInstance.y).to.be.eql(0);
-        });
-
-        it('shouldn\'t move to NORTH when it can\'t', function() {
-            var tondeuseInstance = new tondeuseClass(0, 0, 'N', [0, 0]);
-            tondeuseInstance.movePosition('A');
-            expect(tondeuseInstance.y).to.be.eql(0);
-        });
-
-        it('shouldn\'t move to EAST when it can\'t', function() {
-            var tondeuseInstance = new tondeuseClass(0, 0, 'E', [0, 0]);
-            tondeuseInstance.movePosition('A');
-            expect(tondeuseInstance.x).to.be.eql(0);
-        });
-
-        it('shouldn\'t move to WEAST when it can\'t', function() {
-            var tondeuseInstance = new tondeuseClass(0, 0, 'W', [0, 0]);
-            tondeuseInstance.movePosition('A');
-            expect(tondeuseInstance.x).to.be.eql(0);
-        });
     });
 
     describe('change direction to the Left', function() {
@@ -199,6 +175,40 @@ describe('Tondeuse', function() {
             var tondeuseInstance = new tondeuseClass(0, 0, 'W', [0, 0]);
             tondeuseInstance.movePosition('D');
             expect(tondeuseInstance.ori).to.be.eql('N');
+        });
+    });
+
+    describe('don t move when you can t', function() {
+        it('should log an error when ', function() {
+            var tondeuseInstance = new tondeuseClass(0, 0, 'S', [0, 0]);
+            tondeuseInstance.movePosition();
+            expect(tondeuseInstance.y).to.be.eql(0);
+            expect(tondeuseInstance.x).to.be.eql(0);
+            expect(tondeuseInstance.ori).to.be.eql('S');
+        });
+
+        it('shouldn\'t move to SOUTH when it can\'t', function() {
+            var tondeuseInstance = new tondeuseClass(0, 0, 'S', [0, 0]);
+            tondeuseInstance.movePosition('A');
+            expect(tondeuseInstance.y).to.be.eql(0);
+        });
+
+        it('shouldn\'t move to NORTH when it can\'t', function() {
+            var tondeuseInstance = new tondeuseClass(0, 0, 'N', [0, 0]);
+            tondeuseInstance.movePosition('A');
+            expect(tondeuseInstance.y).to.be.eql(0);
+        });
+
+        it('shouldn\'t move to EAST when it can\'t', function() {
+            var tondeuseInstance = new tondeuseClass(0, 0, 'E', [0, 0]);
+            tondeuseInstance.movePosition('A');
+            expect(tondeuseInstance.x).to.be.eql(0);
+        });
+
+        it('shouldn\'t move to WEAST when it can\'t', function() {
+            var tondeuseInstance = new tondeuseClass(0, 0, 'W', [0, 0]);
+            tondeuseInstance.movePosition('A');
+            expect(tondeuseInstance.x).to.be.eql(0);
         });
     });
 });

@@ -39,9 +39,6 @@ module.exports = function tondeuse(initX, initY, initOri, sizeOfGrass) {
                             this.y--;
                         }
                         break;
-                    default:
-                        console.error('Something goes wrong if the tondeuse orientation', this.ori);
-                        break;
                 }
                 break;
             case 'G':
@@ -58,9 +55,6 @@ module.exports = function tondeuse(initX, initY, initOri, sizeOfGrass) {
                     case 'S':
                         this.ori = 'E';
                         break;
-                    default:
-                        console.error('Something goes wrong if the tondeuse orientation', this.ori);
-                        break;
                 }
                 break;
             case 'D':
@@ -76,9 +70,6 @@ module.exports = function tondeuse(initX, initY, initOri, sizeOfGrass) {
                         break;
                     case 'S':
                         this.ori = 'W';
-                        break;
-                    default:
-                        console.error('Something goes wrong if the tondeuse orientation', this.ori);
                         break;
                 }
                 break;

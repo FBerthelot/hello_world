@@ -1,24 +1,25 @@
 {
-    "name": "xebia-test",
-    "version": "0.0.1",
-    "description": "Test technique pour Xebia",
-    "main": "index.js",
-    "directories": {
-        "test": "test"
-    },
-    "scripts": {
-        "start": "node index.js",
-        "test": "mocha --recursive ./test",
-        "jshint": "jshint -c .jshintrc index.js src/*",
-        "coverage": "istanbul cover _mocha -- --recursive ./test -R spec"
-    },
-    "author": "Florent Berthelot",
-    "license": "All rights reserved for Xebia",
-    "devDependencies": {
-        "chai": "^3.0.0",
-        "istanbul": "^0.3.17",
-        "jshint": "^2.8.0",
-        "mocha": "^2.2.5",
-        "mock-fs": "^3.0.0"
-    }
+  "name": "xebia-test",
+  "version": "0.0.1",
+  "description": "Test technique pour Xebia",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha --recursive ./test",
+    "jshint": "jshint -c .jshintrc index.js src/*",
+    "coverage": "istanbul cover _mocha -- ./test/ -R spec"
+  },
+  "author": "Florent Berthelot",
+  "license": "All rights reserved for Xebia",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.17",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5",
+    "mock-fs": "^3.0.0"
+  }
 }

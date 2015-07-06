@@ -1,6 +1,6 @@
 'use strict';
 
-var tondeuse = require('./src/tondeuse-class'),
+var tondeuseClass = require('./src/tondeuse-class'),
     filesReader = require('./src/files-reader');
 
 var dirName= __dirname + '/fixtures/';
@@ -11,11 +11,16 @@ filesReader(dirName, function(err, data) {
         return;
     }
 
-    for(var j in data.tondeuses) {
-        var instance = new tondeuse(data.tondeuses[j].initPos.x, data.tondeuses[j].initPos.y, data.tondeuses[j].initPos.ori, data.size);
-        for(var i in data.tondeuses[j].parcours) {
-            instance.movePosition(data.tondeuses[j].parcours[i]);
+    data.tondeuses.forEach(function(tondeuse, j) {
+        var instance = new tondeuseClass(tondeuse.initPos.x, tondeuse.initPos.y, tondeuse.initPos.ori, data.size);
+        for(var i in tondeuse.parcours) {
+            instance.movePosition(tondeuse.parcours[i]);
         }
-        console.log(instance);
-    }
+        console.log('===========================TONDEUSE N°', (parseInt(j)+1) +'===============================');
+        console.log('Taille de la pelouse :', data.size[0]+ 'x' +data.size[1]);
+        console.log('Position initial     :', data.tondeuses[j].initPos.x, data.tondeuses[j].initPos.y, data.tondeuses[j].initPos.ori);
+        console.log('Movements            :', data.tondeuses[j].parcours);
+        console.log('Position final       :', instance.x, instance.y, instance.ori);
+        console.log('\n');
+    });
 });
