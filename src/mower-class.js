@@ -1,10 +1,17 @@
 'use strict';
 
-module.exports = function tondeuse(initX, initY, initOri, sizeOfGrass) {
+/**
+ * Mower Class Constructor
+ * @param initX int initial x mower's position
+ * @param initY int initial y mower's position
+ * @param initOri char initial orientation position can onlyh be N, S ,E or W
+ * @param sizeOfGrass array size of the grass, the array must be like [ xSize, ySize]
+ */
+module.exports = function mower(initX, initY, initOri, sizeOfGrass) {
     if(typeof initX !== 'number' || typeof initY !== 'number' || typeof initOri !== 'string' || typeof sizeOfGrass !== 'object') {
         throw 'wrong arguments passed';
     }
-    if(initX > sizeOfGrass[0] || initY > sizeOfGrass[1]) { throw 'initial position of the tondeuse excedeed the size of grass'; }
+    if(initX > sizeOfGrass[0] || initY > sizeOfGrass[1]) { throw 'initial position of the mower excedeed the size of grass'; }
     if(['N', 'S', 'E', 'W'].indexOf(initOri) === -1) { throw 'initial orientation is wrong'; }
     if(sizeOfGrass.length < 2 || typeof sizeOfGrass[0] !== 'number' || typeof sizeOfGrass[1] !== 'number' || sizeOfGrass[0] < 0 || sizeOfGrass[1] < 0 ) {
         throw 'size of grass is wrong';
@@ -15,6 +22,10 @@ module.exports = function tondeuse(initX, initY, initOri, sizeOfGrass) {
     this.y = initY;
     this.ori = initOri;
 
+    /**
+     * function which move mower
+     * @param move sting different moves are possible A, G or D
+     */
     this.movePosition = function movePosition(move) {
         switch(move) {
             case 'A':

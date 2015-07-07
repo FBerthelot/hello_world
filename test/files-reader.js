@@ -40,19 +40,19 @@ describe('file reader', function() {
             expect(dataReaded.size[1]).to.be.eql(7);
         });
 
-        it('should position the tondeuse in the good way', function() {
-            expect(dataReaded.tondeuses).to.be.an.object;
-            expect(dataReaded.tondeuses.length).to.be.eql(1);
-            expect(dataReaded.tondeuses[0].initPos.x).to.be.eql(2);
-            expect(dataReaded.tondeuses[0].initPos.y).to.be.eql(4);
+        it('should position the mower in the good way', function() {
+            expect(dataReaded.mowers).to.be.an.object;
+            expect(dataReaded.mowers.length).to.be.eql(1);
+            expect(dataReaded.mowers[0].initPos.x).to.be.eql(2);
+            expect(dataReaded.mowers[0].initPos.y).to.be.eql(4);
         });
 
-        it('should oriented the tondeuse in the good way', function() {
-            expect(dataReaded.tondeuses[0].initPos.ori).to.be.eql('N');
+        it('should oriented the mower in the good way', function() {
+            expect(dataReaded.mowers[0].initPos.ori).to.be.eql('N');
         });
 
         it('should read the good parcours', function() {
-            expect(dataReaded.tondeuses[0].parcours).to.be.eql('GAGAGAGAA');
+            expect(dataReaded.mowers[0].parcours).to.be.eql('GAGAGAGAA');
         });
     });
 
@@ -69,7 +69,7 @@ describe('file reader', function() {
             });
         });
 
-        it('should return an error when there is no tondeuse in the file', function(done) {
+        it('should return an error when there is no mower in the file', function(done) {
             mockFS({
                 'path/fake_dir' : {
                     'test.js': '5 7\n'
@@ -81,7 +81,7 @@ describe('file reader', function() {
             });
         });
 
-        it('should return an error when initial position of a tondeuse isn\'t well defined', function(done) {
+        it('should return an error when initial position of a mower isn\'t well defined', function(done) {
             mockFS({
                 'path/fake_dir' : {
                     'test.js': '5 7\n24 N\nGAGAGAGAA'
@@ -93,7 +93,7 @@ describe('file reader', function() {
             });
         });
 
-        it('should return an error when move for a tondeuse is not well formatted', function(done) {
+        it('should return an error when move for a mower is not well formatted', function(done) {
             mockFS({
                 'path/fake_dir' : {
                     'test.js': '5 7\n2 4 N\n123'
