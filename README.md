@@ -16,5 +16,10 @@ Le fichier de l'énoncé existe déjà.
 ##Lancement des tests
 `npm test`
 
+##Lancement du test coverage
+`npm run coverage`
+
+##Lancement du linter
+`npm run jshint`
 
 Made with ❤ by Florent Berthelot
